@@ -13,6 +13,8 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
     }
+    
+    let teamComrads = Team.teamMembers()
 
     // MARK: - Table view data source
 
@@ -23,56 +25,18 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //return teamMembers.count
-        return membersTeam.count
+        return teamComrads.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_id", for: indexPath)
-        /*
-        var cellData = cell.defaultContentConfiguration()
-        cell.textLabel?.text = teamMembers[indexPath.row]
-        cellData.text = teamMembers[indexPath.row]
-        cellData.secondaryText = specialization[indexPath.row]
         
-        let members = teamMembers[indexPath.row]
-        let spec = specialization[indexPath.row]
-        var cellData = cell.defaultContentConfiguration()
-        
-        cellData.text = teamMembers
-        cellData.secondaryText = specialization
-        
-        let member = teamMembers[indexPath.row]
-        let spec = specialization[indexPath.row]
-         */
-        
-        //var memberData = cell.defaultContentConfiguration()
-        //memberData.text = teamMembers[indexPath.row]
-        //memberData.secondaryText = specialization[indexPath.row]
-        //memberData.text = secondTeamMembers[indexPath.row]
-        /*
-        for (member, spec) in secondTeamMembers {
-            var teamMember = member
-            var specialisation = spec
-        }
-        */
+        let team = teamComrads[indexPath.row]
         
         var memberData = cell.defaultContentConfiguration()
-        cell.contentConfiguration = memberData
         
-        var member: [String] = []
-        var spec: [String] = []
-        
-        for (key, value) in membersTeam {
-            member.append(key)
-            spec.append(value)
-        }
-        
-        let members = member[indexPath.row]
-        let specialization = spec[indexPath.row]
-        
-        memberData.text = members
-        memberData.secondaryText = specialization
+        memberData.text = team.comrad
+        memberData.secondaryText = team.work
         
         cell.contentConfiguration = memberData
         

@@ -10,19 +10,35 @@ var teamMembers: [String] = ["Максим Линьков","Максим Нов�
 var specialization: [String] = ["ios", "android", "qa"]
  */
 
+struct Team {
+    let comrad: String
+    let work: String
+}
+
+extension Team {
+    static func teamMembers() -> [Team] {
+        [
+            Team(comrad: "Максим Линьков", work: "ios"),
+            Team(comrad: "Максим Новиков", work: "android"),
+            Team(comrad: "Максим Михеев", work: "qa")
+        ]
+    }
+}
+
+/*
 var membersTeam = [
     "Максим Линьков":"ios",
     "Максим Новиков":"android",
     "Максим Михеев":"qa"
 ]
 
-/*
+
 struct Members {
     let name: String
     var spec: String
 }
 
-let membersOfOurTeam =
+let membersOfOurTeam: =
     [
         Members(name: "Максим Линьков", spec: "ios"),
         Members(name: "Максим Новиков", spec: "android"),
