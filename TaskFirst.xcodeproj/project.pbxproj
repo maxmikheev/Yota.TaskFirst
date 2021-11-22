@@ -12,7 +12,7 @@
 		AB5E9446274447A900F5CCF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5E9444274447A900F5CCF6 /* Main.storyboard */; };
 		AB5E9448274447AB00F5CCF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5E9447274447AB00F5CCF6 /* Assets.xcassets */; };
 		AB5E944B274447AB00F5CCF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5E9449274447AB00F5CCF6 /* LaunchScreen.storyboard */; };
-		AB5E945327445F0200F5CCF6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E945227445F0200F5CCF6 /* TableViewController.swift */; };
+		AB5E945327445F0200F5CCF6 /* TeamMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E945227445F0200F5CCF6 /* TeamMembersViewController.swift */; };
 		AB5E94552744623C00F5CCF6 /* MembersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E94542744623C00F5CCF6 /* MembersData.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 		AB5E9447274447AB00F5CCF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB5E944A274447AB00F5CCF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB5E944C274447AB00F5CCF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5E945227445F0200F5CCF6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		AB5E945227445F0200F5CCF6 /* TeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersViewController.swift; sourceTree = "<group>"; };
 		AB5E94542744623C00F5CCF6 /* MembersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 			children = (
 				AB5E943E274447A900F5CCF6 /* AppDelegate.swift */,
 				AB5E94542744623C00F5CCF6 /* MembersData.swift */,
-				AB5E945227445F0200F5CCF6 /* TableViewController.swift */,
+				AB5E945227445F0200F5CCF6 /* TeamMembersViewController.swift */,
 				AB5E9440274447A900F5CCF6 /* SceneDelegate.swift */,
 				AB5E9444274447A900F5CCF6 /* Main.storyboard */,
 				AB5E9447274447AB00F5CCF6 /* Assets.xcassets */,
@@ -143,7 +143,7 @@
 			files = (
 				AB5E943F274447A900F5CCF6 /* AppDelegate.swift in Sources */,
 				AB5E94552744623C00F5CCF6 /* MembersData.swift in Sources */,
-				AB5E945327445F0200F5CCF6 /* TableViewController.swift in Sources */,
+				AB5E945327445F0200F5CCF6 /* TeamMembersViewController.swift in Sources */,
 				AB5E9441274447A900F5CCF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,8 +291,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaskFirst/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -306,8 +308,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.yota.TaskFirst;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.TaskFirst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,8 +322,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaskFirst/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -334,8 +339,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.yota.TaskFirst;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.TaskFirst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
