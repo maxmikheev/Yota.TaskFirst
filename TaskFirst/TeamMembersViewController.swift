@@ -13,7 +13,7 @@ class TeamMembersViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    let teamComrads = Team.teamMembers()
+    let teamComrads = Teammates.teamMembers()
 
     // MARK: - Table view data source
 

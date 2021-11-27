@@ -5,17 +5,17 @@
 //  Created by Максим Михеев on 17.11.2021.
 //
 
-struct Team {
+struct Teammates {
     let comrad: String
     let work: String
 }
 
-extension Team {
-    static func teamMembers() -> [Team] {
+extension Teammates {
+    static func teamMembers() -> [Teammates] {
         [
-            Team(comrad: "Максим Линьков", work: "ios"),
-            Team(comrad: "Максим Новиков", work: "android"),
-            Team(comrad: "Максим Михеев", work: "qa")
+            Teammates(comrad: "Максим Линьков", work: "ios"),
+            Teammates(comrad: "Максим Новиков", work: "android"),
+            Teammates(comrad: "Максим Михеев", work: "qa")
         ]
     }
 }
