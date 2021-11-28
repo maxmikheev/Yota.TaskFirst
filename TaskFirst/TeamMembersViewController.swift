@@ -11,6 +11,8 @@ class TeamMembersViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell_id")
     }
     
     let teamComrads = Teammates.teamMembers()
