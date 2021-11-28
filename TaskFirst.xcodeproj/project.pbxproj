@@ -14,6 +14,7 @@
 		AB5E944B274447AB00F5CCF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5E9449274447AB00F5CCF6 /* LaunchScreen.storyboard */; };
 		AB5E945327445F0200F5CCF6 /* TeamMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E945227445F0200F5CCF6 /* TeamMembersViewController.swift */; };
 		AB5E94552744623C00F5CCF6 /* MembersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E94542744623C00F5CCF6 /* MembersData.swift */; };
+		ABB6E3602754372600AE860C /* DetailMemberStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB6E35F2754372600AE860C /* DetailMemberStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AB5E944C274447AB00F5CCF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5E945227445F0200F5CCF6 /* TeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersViewController.swift; sourceTree = "<group>"; };
 		AB5E94542744623C00F5CCF6 /* MembersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersData.swift; sourceTree = "<group>"; };
+		ABB6E35F2754372600AE860C /* DetailMemberStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailMemberStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				AB5E945227445F0200F5CCF6 /* TeamMembersViewController.swift */,
 				AB5E9440274447A900F5CCF6 /* SceneDelegate.swift */,
 				AB5E9444274447A900F5CCF6 /* Main.storyboard */,
+				ABB6E35F2754372600AE860C /* DetailMemberStoryboard.storyboard */,
 				AB5E9447274447AB00F5CCF6 /* Assets.xcassets */,
 				AB5E9449274447AB00F5CCF6 /* LaunchScreen.storyboard */,
 				AB5E944C274447AB00F5CCF6 /* Info.plist */,
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB6E3602754372600AE860C /* DetailMemberStoryboard.storyboard in Resources */,
 				AB5E944B274447AB00F5CCF6 /* LaunchScreen.storyboard in Resources */,
 				AB5E9448274447AB00F5CCF6 /* Assets.xcassets in Resources */,
 				AB5E9446274447A900F5CCF6 /* Main.storyboard in Resources */,
