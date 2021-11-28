@@ -6,10 +6,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Team Members View Controller-->
         <scene sceneID="HxV-yh-K7P">
             <objects>
-                <tableViewController id="CXV-UV-Ssw" sceneMemberID="viewController"/>
+                <tableViewController storyboardIdentifier="stroryboard_id" id="CXV-UV-Ssw" customClass="TeamMembersViewController" customModule="TaskFirst" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0P-rY-SHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-255" y="85"/>

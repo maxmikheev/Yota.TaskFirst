@@ -19,3 +19,15 @@ extension Teammates {
         ]
     }
 }
+
+struct DetailDescriptions {
+    let birthday: String
+}
+
+extension DetailDescriptions {
+    static func detailOfMembers() -> [DetailDescriptions] {
+        [
+            DetailDescriptions(birthday: "01.01.1970")
+        ]
+    }
+}
