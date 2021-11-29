@@ -45,6 +45,6 @@ class TeamMembersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DetailMemberStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "stroryboard_id")
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
