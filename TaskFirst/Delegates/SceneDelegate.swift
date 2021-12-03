@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let viewController = TeamMembersViewController()
-        let projectNavigationController = UINavigationController(rootViewController: viewController)
+        let teamMembersVc = TeamMembersViewController()
+        let projectNavigationController = UINavigationController(rootViewController: teamMembersVc)
         
         window.rootViewController = projectNavigationController
         

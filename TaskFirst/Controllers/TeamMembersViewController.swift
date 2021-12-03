@@ -9,10 +9,12 @@ import UIKit
 
 class TeamMembersViewController: UITableViewController {
 
+    let text = birhday
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell_id")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifications.cellIdentificator.rawValue)
     }
     
     let teamComrads = Teammates.teamMembers()
@@ -28,7 +30,7 @@ class TeamMembersViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_id", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifications.cellIdentificator.rawValue, for: indexPath)
         
         let team = teamComrads[indexPath.row]
         
@@ -44,7 +46,7 @@ class TeamMembersViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DetailMemberStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "stroryboard_id")
+        let vc = storyboard.instantiateViewController(withIdentifier: Identifications.detailMemberStoryboard.rawValue)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
