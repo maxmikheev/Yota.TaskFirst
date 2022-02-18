@@ -9,15 +9,19 @@ import UIKit
 
 class TeamMembersViewController: UITableViewController {
 
-    let text = birhday
+    //let text = birhday
+    //var members: [MemberOfTeam] = []
+    
+    let members = MemberOfTeam.getMemberData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifications.cellIdentificator.rawValue)
+        
+        let viewTitle = self.navigationItem
+        viewTitle.title = "Members list"
     }
-    
-    let teamComrads = Teammates.teamMembers()
 
     // MARK: - Table view data source
 
@@ -26,18 +30,18 @@ class TeamMembersViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teamComrads.count
+        return members.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifications.cellIdentificator.rawValue, for: indexPath)
         
-        let team = teamComrads[indexPath.row]
+        let team = members[indexPath.row]
         
         var memberData = cell.defaultContentConfiguration()
         
-        memberData.text = team.comrad
-        memberData.secondaryText = team.work
+        memberData.text = team.fullName
+        memberData.secondaryText = team.spec
         
         cell.contentConfiguration = memberData
         

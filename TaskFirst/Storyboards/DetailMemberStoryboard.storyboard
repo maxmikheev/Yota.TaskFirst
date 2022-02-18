@@ -17,8 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-3Q-Zvh" userLabel="textLabel">
-                                <rect key="frame" x="186" y="438" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detailDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-3Q-Zvh" userLabel="textLabel">
+                                <rect key="frame" x="20" y="185" width="378" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eW-lh-eBr">
+                                <rect key="frame" x="20" y="258" width="378" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,14 +33,17 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3Bo-3Q-Zvh" secondAttribute="bottom" constant="403" id="65R-Rl-waO"/>
-                            <constraint firstItem="3Bo-3Q-Zvh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="394" id="iOj-D9-Okq"/>
-                            <constraint firstItem="3Bo-3Q-Zvh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="186" id="qeI-nv-s54"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Bo-3Q-Zvh" secondAttribute="trailing" constant="186" id="xWO-T9-JhH"/>
+                            <constraint firstItem="1eW-lh-eBr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="214" id="2B0-50-ziD"/>
+                            <constraint firstItem="3Bo-3Q-Zvh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="6qD-ea-Lh7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1eW-lh-eBr" secondAttribute="trailing" constant="16" id="9Um-i6-oPj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Bo-3Q-Zvh" secondAttribute="trailing" constant="16" id="X4M-lq-0Dj"/>
+                            <constraint firstItem="1eW-lh-eBr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="cgO-38-c0T"/>
+                            <constraint firstItem="3Bo-3Q-Zvh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="141" id="dEg-T9-Rvw"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textLabel" destination="3Bo-3Q-Zvh" id="ony-he-28H"/>
+                        <outlet property="detailDescription" destination="3Bo-3Q-Zvh" id="ony-he-28H"/>
+                        <outlet property="phone" destination="1eW-lh-eBr" id="I2d-GU-tyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
