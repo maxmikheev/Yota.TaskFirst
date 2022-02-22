@@ -22,12 +22,12 @@ class DataManager {
     ]
     
     let detailDescription = [
-        "Date of birth: 01.01.1970. Lead IOS team",
-        "Date of birth: 01.01.1960. IOS ded",
-        "Date of birth: 01.01.1975. Lead Android team",
-        "Date of birth: 01.01.1980. Lead voice lane in Android team",
-        "Date of birth: 01.01.1996. AQA in IOS team",
-        "Date of birth: 01.01.1950. Lead QA team"
+        "Date of birth: 01.01.1970 \nLead IOS team" ,
+        "Date of birth: 01.01.1960 \nIOS ded",
+        "Date of birth: 01.01.1975 \nLead Android team",
+        "Date of birth: 01.01.1980 \nLead voice lane in Android team",
+        "Date of birth: 01.01.1996 \nAQA in IOS team",
+        "Date of birth: 01.01.1950 \nLead QA team"
     ]
     
     let phones = [

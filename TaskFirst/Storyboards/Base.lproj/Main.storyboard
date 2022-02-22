@@ -27,7 +27,7 @@
         <scene sceneID="HxV-yh-K7P">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="CXV-UV-Ssw" customClass="TeamMembersViewController" customModule="TaskFirst" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="N6A-HA-IrX"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="N6A-HA-IrX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0P-rY-SHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
