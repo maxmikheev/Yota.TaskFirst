@@ -9,18 +9,24 @@ import UIKit
 
 class DetailMemberViewController: UIViewController {
     
+    @IBOutlet weak var memberPhoto: UIImageView!
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
         
-    var members: MemberOfTeam?
-    //let members = MemberOfTeam.getMemberData()
+    var members: MemberOfTeam!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = .cyan
         
-        phone.text = "Phone: \(members?.phone)"
-        detailDescription.text = "Description: \(members?.detailDescription)"
+        title = members.fullName
+        
+        memberPhoto.image = UIImage(named: members.fullName)
+        
+        phone.text = "Phone: \(members.phone)"
+        
+        detailDescription.text = members.detailDescription
+        detailDescription.numberOfLines = 2
+        
     }
 }
 

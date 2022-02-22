@@ -21,6 +21,7 @@ class TeamMembersViewController: UITableViewController {
         
         let viewTitle = self.navigationItem
         viewTitle.title = "Members list"
+        viewTitle.backButtonTitle = "Back"
     }
 
     // MARK: - Table view data source
@@ -50,7 +51,11 @@ class TeamMembersViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DetailMemberStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: Identifications.detailMemberStoryboard.rawValue)
-        navigationController?.pushViewController(vc, animated: true)
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: Identifications.detailMemberStoryboard.rawValue) as? DetailMemberViewController {
+            
+            detailVC.members = members[indexPath.row]
+            
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 }
