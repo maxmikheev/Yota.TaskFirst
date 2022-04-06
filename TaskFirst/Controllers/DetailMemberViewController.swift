@@ -8,39 +8,66 @@
 import UIKit
 
 class DetailMemberViewController: UIViewController {
-    
-    @IBOutlet weak var memberPhoto: UIImageView!
-    @IBOutlet weak var phone: UILabel!
-    @IBOutlet weak var detailDescription: UILabel!
         
     var members: MemberOfTeam!
+    
+    private lazy var memberPhoto: UIImageView = {
+        let photo = UIImageView()
+        photo.image = UIImage(named: members.fullName)
+        return photo
+    }()
+    
+    private lazy var detailDescription: UILabel = {
+        let description = UILabel()
+        description.text = members.detailDescription
+        description.numberOfLines = 2
+        return description
+    }()
+    
+    private lazy var phone: UILabel = {
+        let phoneMember = UILabel()
+        phoneMember.text = members.phone
+        return phoneMember
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         title = members.fullName
         
-        memberPhoto.image = UIImage(named: members.fullName)
+        setupViews([memberPhoto, detailDescription, phone])
+        setConstraints()
+    }
+    
+    private func setupViews(_ views: [UIView]) {
+        views.forEach { view.addSubview($0) }
+    }
+    
+    private func setConstraints() {
+        memberPhoto.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            memberPhoto.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            memberPhoto.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            memberPhoto.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            memberPhoto.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 400)
+        ])
         
-        phone.text = "Phone: \(members.phone)"
+        detailDescription.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            detailDescription.topAnchor.constraint(equalTo: memberPhoto.bottomAnchor, constant: 30),
+            detailDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            detailDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+        ])
         
-        detailDescription.text = members.detailDescription
-        detailDescription.numberOfLines = 2
+        phone.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            phone.topAnchor.constraint(equalTo: detailDescription.bottomAnchor, constant: 20),
+            phone.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            phone.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+        ])
     }
 }
-
-/*
-title = members.fullName
-print(title)
-
-let phone = UILabel(frame: CGRect(x: 10, y: 10, width: 200, height: 30))
-phone.center = CGPoint(x: 300, y: 50)
-phone.textAlignment = .left
-phone.text = member?.phone
-
-let detailDescription = UILabel(frame: CGRect(x: 20, y: 20, width: 200, height: 30))
-detailDescription.center = CGPoint(x: 200, y: 200)
-detailDescription.textAlignment = .center
-detailDescription.text = member?.detailDescription
- */

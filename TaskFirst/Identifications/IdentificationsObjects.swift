@@ -6,8 +6,6 @@
 //
 
 enum Identifications: String {
-    /// Идентификатор контроллера детального описания
-    case detailMemberStoryboard = "detail_member_storyboard"
     /// Идентификатор ячейки таблицы
     case cellIdentificator = "cell_identificator"
 }
