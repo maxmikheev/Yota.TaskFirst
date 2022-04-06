@@ -8,9 +8,6 @@
 import UIKit
 
 class TeamMembersViewController: UITableViewController {
-
-    //let text = birhday
-    //var members: [MemberOfTeam] = []
     
     let members = MemberOfTeam.getMemberData()
     
@@ -39,15 +36,16 @@ class TeamMembersViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Input member's name"
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
             return filtred.count
@@ -55,7 +53,7 @@ class TeamMembersViewController: UITableViewController {
             return members.count
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifications.cellIdentificator.rawValue, for: indexPath)
         
@@ -66,8 +64,6 @@ class TeamMembersViewController: UITableViewController {
         } else {
             team = members[indexPath.row]
         }
-        
-        //let team = members[indexPath.row]
         
         var memberData = cell.defaultContentConfiguration()
         
@@ -80,26 +76,25 @@ class TeamMembersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "DetailMemberStoryboard", bundle: nil)
-        if let detailVC = storyboard.instantiateViewController(withIdentifier: Identifications.detailMemberStoryboard.rawValue) as? DetailMemberViewController {
-            
-            let member: MemberOfTeam
-            
-            if isFiltering {
-                member = filtred[indexPath.row]
-            } else {
-                member = members[indexPath.row]
-            }
-            
-            detailVC.members = member
-            
-            navigationController?.pushViewController(detailVC, animated: true)
+        
+        let detailVC = DetailMemberViewController()
+        
+        let member: MemberOfTeam
+        
+        if isFiltering {
+            member = filtred[indexPath.row]
+        } else {
+            member = members[indexPath.row]
         }
+        
+        detailVC.members = member
+        
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
 extension TeamMembersViewController: UISearchResultsUpdating {
-
+    
     func updateSearchResults(for searchController: UISearchController) {
         filterContent(searchController.searchBar.text!)
     }
