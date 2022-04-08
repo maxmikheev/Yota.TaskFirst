@@ -6,13 +6,21 @@
 //
 
 import UIKit
+import CoreData
 
 class TeamMembersViewController: UITableViewController {
     
-    let members = MemberOfTeam.getMemberData()
+    //var context: NSManagedObjectContext!
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    let context = appDelegate.persistentContainer.viewContext
+//    var members: Member!
+    
+    var members = [Member]()
+    
+    //let members = MemberOfTeam.getMemberData()
     
     private let searchController = UISearchController(searchResultsController: nil)
-    private var filtred = [MemberOfTeam]()
+    private var filtred = [Member]()
     private var ascendingSort = true
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
@@ -22,8 +30,40 @@ class TeamMembersViewController: UITableViewController {
         return searchController.isActive && !searchBarIsEmpty
     }
     
+    /// Получение данных из файла
+    func getData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        guard let pathToFile = Bundle.main.path(forResource: "DataMembers", ofType: "plist"),
+              let dataArray = NSArray(contentsOfFile: pathToFile) else { return }
+
+
+        for dictionary in dataArray {
+            let entity = NSEntityDescription.entity(forEntityName: "Member", in: context)
+            let member = NSManagedObject(entity: entity!, insertInto: context) as! Member
+
+            let memberDictionary = dictionary as! [String: AnyObject]
+            member.name = memberDictionary["name"] as? String
+            member.surname = memberDictionary["surname"] as? String
+            member.detailDescription = memberDictionary["detailDescription"] as? String
+            member.phone = memberDictionary["phone"] as? String
+            member.spec = memberDictionary["spec"] as? String
+
+            let imageName = memberDictionary["imageName"] as? String
+            let image = UIImage(named: imageName!)
+            let imageData = image!.pngData()
+            member.imageData = imageData
+        }
+    }
+    
+    //let fetchRequest: NSFetchRequest<Member> = Member.fetchRequest()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getData()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifications.cellIdentificator.rawValue)
         
@@ -57,7 +97,9 @@ class TeamMembersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifications.cellIdentificator.rawValue, for: indexPath)
         
-        var team: MemberOfTeam
+        //var team: Member
+        //var team = [Member]()
+        var team: Member!
         
         if isFiltering {
             team = filtred[indexPath.row]
@@ -67,7 +109,7 @@ class TeamMembersViewController: UITableViewController {
         
         var memberData = cell.defaultContentConfiguration()
         
-        memberData.text = team.fullName
+        memberData.text = team.surname
         memberData.secondaryText = team.spec
         
         cell.contentConfiguration = memberData
@@ -79,7 +121,9 @@ class TeamMembersViewController: UITableViewController {
         
         let detailVC = DetailMemberViewController()
         
-        let member: MemberOfTeam
+        //let member: MemberOfTeam
+        //var member: Member
+        var member: Member!
         
         if isFiltering {
             member = filtred[indexPath.row]
@@ -100,8 +144,8 @@ extension TeamMembersViewController: UISearchResultsUpdating {
     }
     
     private func filterContent(_ searchText: String) {
-        filtred = members.filter({ (member: MemberOfTeam) -> Bool in
-            return member.fullName.lowercased().contains(searchText.lowercased())
+        filtred = members.filter({ (member: Member) -> Bool in
+            return member.name!.lowercased().contains(searchText.lowercased())
         })
         
         tableView.reloadData()

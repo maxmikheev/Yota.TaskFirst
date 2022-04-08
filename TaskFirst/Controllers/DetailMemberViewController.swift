@@ -6,14 +6,18 @@
 //
  
 import UIKit
+import CoreData
 
 class DetailMemberViewController: UIViewController {
         
-    var members: MemberOfTeam!
+    var context: NSManagedObjectContext!
+    //var members: MemberOfTeam!
+    var members: Member!
+
     
     private lazy var memberPhoto: UIImageView = {
         let photo = UIImageView()
-        photo.image = UIImage(named: members.fullName)
+        photo.image = UIImage(data: members.imageData!)
         return photo
     }()
     
@@ -34,7 +38,7 @@ class DetailMemberViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = members.fullName
+        title = "\(members.name) \(members.surname)"
         
         setupViews([memberPhoto, detailDescription, phone])
         setConstraints()
