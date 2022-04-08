@@ -18,6 +18,7 @@
 		ABB6E36227555CA100AE860C /* DetailMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6E36127555CA100AE860C /* DetailMemberViewController.swift */; };
 		ABCE4A3727FF180600393DFC /* DataMembers.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABCE4A3627FF180600393DFC /* DataMembers.plist */; };
 		ABCE4A3A27FF1B5E00393DFC /* TeamMembers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABCE4A3827FF1B5E00393DFC /* TeamMembers.xcdatamodeld */; };
+		ABDDCBCB28004AF900F0C553 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = ABDDCBCA28004AF900F0C553 /* Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,9 @@
 		AB84176427BCD21500F88B0E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AB8664FC275AD0C40065F866 /* IdentificationsObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationsObjects.swift; sourceTree = "<group>"; };
 		ABB6E36127555CA100AE860C /* DetailMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemberViewController.swift; sourceTree = "<group>"; };
-		ABCE4A3627FF180600393DFC /* DataMembers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = DataMembers.plist; path = TaskFirst/DataMembers.plist; sourceTree = SOURCE_ROOT; };
+		ABCE4A3627FF180600393DFC /* DataMembers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DataMembers.plist; path = TaskFirst/Models/DataMembers.plist; sourceTree = SOURCE_ROOT; };
 		ABCE4A3927FF1B5E00393DFC /* TeamMembers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamMembers.xcdatamodel; sourceTree = "<group>"; };
+		ABDDCBCA28004AF900F0C553 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,6 @@
 				AB866502275AD5010065F866 /* Storyboards */,
 				AB5E9447274447AB00F5CCF6 /* Assets.xcassets */,
 				AB5E944C274447AB00F5CCF6 /* Info.plist */,
-				ABCE4A3627FF180600393DFC /* DataMembers.plist */,
 				ABCE4A3827FF1B5E00393DFC /* TeamMembers.xcdatamodeld */,
 				AB84176427BCD21500F88B0E /* DataManager.swift */,
 			);
@@ -101,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				AB5E94542744623C00F5CCF6 /* MembersData.swift */,
+				ABCE4A3627FF180600393DFC /* DataMembers.plist */,
+				ABDDCBCA28004AF900F0C553 /* Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				ABCE4A3727FF180600393DFC /* DataMembers.plist in Resources */,
 				AB5E944B274447AB00F5CCF6 /* LaunchScreen.storyboard in Resources */,
+				ABDDCBCB28004AF900F0C553 /* Models in Resources */,
 				AB5E9448274447AB00F5CCF6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
