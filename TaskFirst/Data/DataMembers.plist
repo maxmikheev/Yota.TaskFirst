@@ -10,7 +10,7 @@
 		<key>phone</key>
 		<string>7999-999-99-01</string>
 		<key>detailDescription</key>
-		<string>Date of birth: 01.01.1970 \nLead IOS team</string>
+		<string>Date of birth: 01.01.1970. Lead IOS team</string>
 		<key>surname</key>
 		<string>Linkov</string>
 		<key>name</key>
@@ -24,7 +24,7 @@
 		<key>phone</key>
 		<string>7999-999-99-02</string>
 		<key>detailDescription</key>
-		<string>Date of birth: 01.01.1960 \nIOS ded</string>
+		<string>Date of birth: 01.01.1960 . iOS ded</string>
 		<key>surname</key>
 		<string>Dolgopolov</string>
 		<key>name</key>
@@ -38,7 +38,7 @@
 		<key>phone</key>
 		<string>7999-999-99-03</string>
 		<key>detailDescription</key>
-		<string>Date of birth: 01.01.1975 \nLead Android team</string>
+		<string>Date of birth: 01.01.1975. Lead Android team</string>
 		<key>surname</key>
 		<string>Shapkin</string>
 		<key>name</key>
@@ -52,7 +52,7 @@
 		<key>phone</key>
 		<string>7999-999-99-04</string>
 		<key>detailDescription</key>
-		<string>Date of birth: 01.01.1980 \nLead voice lane in Android team</string>
+		<string>Date of birth: 01.01.1980. Lead voice lane in Android team</string>
 		<key>surname</key>
 		<string>Uspenskiy</string>
 		<key>name</key>
@@ -66,7 +66,7 @@
 		<key>phone</key>
 		<string>7999-999-99-05</string>
 		<key>detailDescription</key>
-		<string>Date of birth: 01.01.1996 \nAQA in IOS team</string>
+		<string>Date of birth: 01.01.1996. AQA in IOS team</string>
 		<key>surname</key>
 		<string>Mikheev</string>
 		<key>name</key>
@@ -80,7 +80,7 @@
 		<key>phone</key>
 		<string>7999-999-99-06</string>
 		<key>detailDescription</key>
-		<string>Date of birth: 01.01.1950 \nLead QA team</string>
+		<string>Date of birth: 01.01.1950. Lead QA team</string>
 		<key>surname</key>
 		<string>Osipets</string>
 		<key>name</key>

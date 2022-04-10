@@ -10,14 +10,9 @@ import CoreData
 
 class TeamMembersViewController: UITableViewController {
     
-    //var context: NSManagedObjectContext!
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    let context = appDelegate.persistentContainer.viewContext
-//    var members: Member!
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var members = [Member]()
-    
-    //let members = MemberOfTeam.getMemberData()
     
     private let searchController = UISearchController(searchResultsController: nil)
     private var filtred = [Member]()
@@ -32,6 +27,20 @@ class TeamMembersViewController: UITableViewController {
     
     /// Получение данных из файла
     func getData() {
+        
+        let fetchRequest: NSFetchRequest<Member> = Member.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name != nil")
+        
+        var records = 0
+        
+        do {
+            records = try context.count(for: fetchRequest)
+            print("Is Data there already?")
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        guard records == 0 else { return }
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -58,14 +67,15 @@ class TeamMembersViewController: UITableViewController {
         }
     }
     
-    //let fetchRequest: NSFetchRequest<Member> = Member.fetchRequest()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getData()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifications.cellIdentificator.rawValue)
+        tableView.dataSource = self
+        
+        fetchData()
         
         let viewTitle = self.navigationItem
         viewTitle.title = "Members list"
@@ -78,6 +88,16 @@ class TeamMembersViewController: UITableViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
+    }
+    
+    private func fetchData() {
+        let fetchRequest: NSFetchRequest<Member> = Member.fetchRequest()
+
+        do {
+            members = try context.fetch(fetchRequest)
+        } catch let error {
+            print(error)
+        }
     }
     
     // MARK: - Table view data source
@@ -97,9 +117,7 @@ class TeamMembersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifications.cellIdentificator.rawValue, for: indexPath)
         
-        //var team: Member
-        //var team = [Member]()
-        var team: Member!
+        let team: Member!
         
         if isFiltering {
             team = filtred[indexPath.row]
@@ -109,7 +127,7 @@ class TeamMembersViewController: UITableViewController {
         
         var memberData = cell.defaultContentConfiguration()
         
-        memberData.text = team.surname
+        memberData.text = "\(team.name!) \(team.surname!)"
         memberData.secondaryText = team.spec
         
         cell.contentConfiguration = memberData
@@ -121,8 +139,6 @@ class TeamMembersViewController: UITableViewController {
         
         let detailVC = DetailMemberViewController()
         
-        //let member: MemberOfTeam
-        //var member: Member
         var member: Member!
         
         if isFiltering {
@@ -145,7 +161,7 @@ extension TeamMembersViewController: UISearchResultsUpdating {
     
     private func filterContent(_ searchText: String) {
         filtred = members.filter({ (member: Member) -> Bool in
-            return member.name!.lowercased().contains(searchText.lowercased())
+            return member.name!.lowercased().contains(searchText.lowercased()) || member.surname!.lowercased().contains(searchText.lowercased())
         })
         
         tableView.reloadData()

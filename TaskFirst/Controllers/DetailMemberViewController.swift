@@ -11,7 +11,6 @@ import CoreData
 class DetailMemberViewController: UIViewController {
         
     var context: NSManagedObjectContext!
-    //var members: MemberOfTeam!
     var members: Member!
 
     
@@ -30,7 +29,7 @@ class DetailMemberViewController: UIViewController {
     
     private lazy var phone: UILabel = {
         let phoneMember = UILabel()
-        phoneMember.text = members.phone
+        phoneMember.text = "Phone: \(members.phone!)"
         return phoneMember
     }()
     
@@ -38,7 +37,7 @@ class DetailMemberViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "\(members.name) \(members.surname)"
+        title = "\(members.name!) \(members.surname!)"
         
         setupViews([memberPhoto, detailDescription, phone])
         setConstraints()
