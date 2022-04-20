@@ -12,6 +12,8 @@ class TeamMembersViewController: UITableViewController {
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var viewModel: TableViewViewModelType?
+    
     var members = [Member]()
     
     private let searchController = UISearchController(searchResultsController: nil)
@@ -108,9 +110,9 @@ class TeamMembersViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
-            return filtred.count
+            return viewModel?.numberOfRowsInFiltred() ?? 0
         } else {
-            return members.count
+            return viewModel?.numberOfRowsInActual() ?? 0
         }
     }
     

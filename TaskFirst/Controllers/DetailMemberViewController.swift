@@ -11,25 +11,25 @@ import CoreData
 class DetailMemberViewController: UIViewController {
         
     var context: NSManagedObjectContext!
-    var members: Member!
+    //var members: Member!
+    var viewModel: DetailViewModel?
 
-    
     private lazy var memberPhoto: UIImageView = {
         let photo = UIImageView()
-        photo.image = UIImage(data: members.imageData!)
+        photo.image = viewModel?.image
         return photo
     }()
     
     private lazy var detailDescription: UILabel = {
         let description = UILabel()
-        description.text = members.detailDescription
+        description.text = viewModel?.description
         description.numberOfLines = 2
         return description
     }()
     
     private lazy var phone: UILabel = {
         let phoneMember = UILabel()
-        phoneMember.text = "Phone: \(members.phone!)"
+        phoneMember.text = "Phone: \(viewModel?.phone)"
         return phoneMember
     }()
     
@@ -37,7 +37,7 @@ class DetailMemberViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "\(members.name!) \(members.surname!)"
+        title = "\(viewModel?.name) \(viewModel?.surname)"
         
         setupViews([memberPhoto, detailDescription, phone])
         setConstraints()
